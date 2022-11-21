@@ -24,7 +24,7 @@
 		}
 		.btn{
 			padding: 1%;
-			width: 15%;
+			width: 10%;
 			border-radius: 45%;
 		}
 	</style>
@@ -48,9 +48,12 @@
 			let ul=document.querySelector("ul")
 			console.log(ul)
 			let li=document.createElement("li")
+			const d=new Date()
+			var r=d.getHours();
+			const i=d.getMinutes();
 			li.innerHTML=`
-			<span>${newMsg}</span>
-			<i class="fa-sharp fa-solid fa-rectangle-xmark"></i>
+			<span onclick="todo()">${newMsg} ${r}:${i}</span>
+			<button name="deleteButton" ><i class="fas fa-trash"></i></button>
 			`
 			li.classList.add("listType")
 			ul.appendChild(li)	
